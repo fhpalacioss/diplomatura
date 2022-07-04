@@ -1,0 +1,59 @@
+.material-icons.md-18 {
+    font-size: 18px;
+}
+
+.material-icons.md-24 {
+    font-size: 24px;
+}
+
+.material-icons.md-36 {
+    font-size: 36px;
+}
+
+.material-icons.md-48 {
+    font-size: 48px;
+}
+
+.htmlIcon {
+    color: indianred;
+    vertical-align: top;
+}
+
+H1 {
+    display: inline-block;
+}
+
+#name {
+    margin-left: 28px;
+    font-family: cursive;
+    color: #5f5f58;
+}
+
+.parallax {
+    /* The image used */
+    background-image: url("developer.jpg");
+    /* Set a specific height */
+    min-height: 500px;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.content {
+    padding: 60px;
+}
+
+.cs-inlineBlock {
+    display: inline-block;
+}
+
+#contImg {
+    max-width: 454px;
+    vertical-align: top;
+}
+
+.descriptionContent {
+    width: 65%;
+}
