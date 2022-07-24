@@ -1,0 +1,33 @@
+#red {
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    color: white;
+}
+
+#blue {
+    width: 150px;
+    height: 150px;
+    background-color: blue;
+    color: white;
+}
+
+#green {
+    width: 150px;
+    height: 150px;
+    background-color: green;
+    color: white;
+}
+
+#PrincipalDiv {
+    border: solid;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.textAlingn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
