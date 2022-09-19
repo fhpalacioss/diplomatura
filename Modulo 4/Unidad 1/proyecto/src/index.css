@@ -1,0 +1,141 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333d6;
+}
+
+li {
+  display: inline-block;
+  float: right;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 17px 17px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #333333d6;
+  color: aliceblue;
+}
+
+.imgHeader {
+  margin: 6px;
+}
+
+.parallax {
+  /* The image used */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("img/parallax.jpg");
+  /* Set a specific height */
+  min-height: 800px;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.textColorParalax {
+  color: white;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  background-color: #6166fb;
+  color: #fff;
+}
+
+.contenedorInlineBlock {
+  display: inline-block;
+}
+
+.imgNosotros {
+  /* height: 31%; */
+  width: 93%;
+  border-bottom-left-radius: 184px;
+  border-top-right-radius: 184px;
+  box-shadow: 15px 15px #4f535b30;
+  vertical-align: baseline !important;
+  margin-top: 90px
+}
+
+.card {
+  align-items: center;
+}
+
+.card img {
+  width: 22%;
+}
+
+@media only screen and (max-width: 1264px) {
+  .imgNosotros {
+      margin-top: 31%;
+  }
+}
+
+@media only screen and (max-width: 1144px) {
+  .imgNosotros {
+      margin-top: 45%;
+  }
+}
+
+@media only screen and (max-width: 924px) {
+  .imgNosotros {
+      margin-top: 59%;
+  }
+}
+
+@media only screen and (max-width: 792px) {
+  .imgNosotros {
+      margin-top: 78%;
+  }
+}
+
+.ImgServicios {
+  display: inline-flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.paddinParalax{
+  padding-top: 15% !important;
+}
+.headerStylePadding{
+  padding-bottom: 97px !important;
+}
+.display5marginTop{
+  margin-top:90px
+}
+.displayImgmarginTop{
+  margin-top:5px
+}
+.col12servicios{
+  padding-bottom: 97px;
+  background-color: aliceblue;
+}
+.contenedorInlineBlockmargin{
+  margin-top:35px
+}
+.imgPageServicios{
+  width: 54% !important;
+}
+.imgPageServiciosPadding{
+  padding: 5px;
+}
+.paddingtopcontact{
+  padding-top: 10% !important;
+}
+.margintopcomentarios{
+  margin-top:10px
+}
+.margintopenviar{
+  margin-top:20px
+}
