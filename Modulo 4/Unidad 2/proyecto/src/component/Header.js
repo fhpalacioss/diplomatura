@@ -1,10 +1,10 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import responsive from "../img/responsive.png";
 
 const Header = () => {
     return (
-        <Fragment>
+        <>
           <nav>
           <ul>
             <img className="imgHeader" src={responsive} height="47"/>
@@ -18,7 +18,7 @@ const Header = () => {
          <section>
           <Outlet/>
         </section>
-    </Fragment>
+    </>
     )
 }
 

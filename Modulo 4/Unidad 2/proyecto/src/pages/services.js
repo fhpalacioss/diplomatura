@@ -8,7 +8,7 @@ import img2 from '../img/img2.png';
 
 export default function Services() {
   return (
-    <Fragment>
+    <>
 
       <div className="parallax">
         <div className="px-4 py-5  text-center paddinParalax">
@@ -67,6 +67,6 @@ export default function Services() {
 
 
       <Footer/>
-    </Fragment>
+    </>
   );
 }

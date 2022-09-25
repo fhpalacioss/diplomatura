@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 
 import Footer from '../component/Footer';
 
@@ -11,7 +11,7 @@ import img04 from '../img/04.png';
 
 export default function Processes() {
   return (
-    <Fragment>
+    <>
 
     
 <div className="parallax">
@@ -80,6 +80,6 @@ export default function Processes() {
     </div>
 
       <Footer/>
-    </Fragment>
+    </>
   );
 }

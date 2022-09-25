@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 
 import Footer from '../component/Footer';
 
@@ -8,7 +8,7 @@ import responsive from '../img/responsive.png';
 
 export default function Processes() {
   return (
-    <Fragment>
+    <>
 
 
 
@@ -122,6 +122,6 @@ export default function Processes() {
     </div>
 
       <Footer/>
-    </Fragment>
+    </>
   );
 }
