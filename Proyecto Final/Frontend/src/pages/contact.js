@@ -1,12 +1,41 @@
-import React from 'react';
 
+import {useState, useEffect} from 'react'
 import Footer from '../component/Footer';
-
 import responsive from '../img/responsive.png';
+import axios from 'axios';
 
+const Contact = () => {
 
-
-export default function Processes() {
+    const initialForm = {
+        nombre: '',
+        email: '',
+        telefono: '',
+        mensaje: ''
+      }
+    
+      const[sending,setSending] = useState(false);
+      const[msg,setMsg] = useState('');
+      const[formData,setFormData] = useState(initialForm);
+   
+      const handleChange = e =>{
+        const {name, value}= e.target;
+        setFormData(oldData => ({
+           ...oldData,
+           [name]:value
+        }));
+      }
+   
+      const handleSubmit = async e =>{
+       e.preventDefault();
+       setMsg('');
+       setSending(true);
+       const response = await axios.post('http://localhost:3000/api/contacto', formData);
+       setSending(false);
+       setMsg(response.data.message);
+       if(response.data.error === false){
+           setFormData(initialForm);
+       }
+      }
   return (
     <>
 
@@ -42,86 +71,49 @@ export default function Processes() {
     <div className="container headerStylePadding" >
         <div className="row g-5">
             <div className="">
-                <form className="needs-validation" novalidate="">
+                <form action='/contacto' method='post' onSubmit={handleSubmit} className="needs-validation" novalidate="">
                     <div className="row g-3">
-                        <div className="col-sm-6">
-                            <label for="Name" className="form-label">Nombre</label>
-                            <input type="text" className="form-control" id="firstName" placeholder="" value="" required=""/>
+                        <div className="col-sm-12">
+                            <label for="nombre" className="form-label">Nombre</label>
+                            <input type="text" className="form-control" id="nombre" name="nombre"  value={formData.nombre} onChange={handleChange} required=""/>
 
                         </div>
-
-                        <div className="col-sm-6">
-                            <label for="Apellido" className="form-label">Apellido</label>
-                            <input type="text" className="form-control" id="lastName" placeholder="" value="" required=""/>
-
-                        </div>
-
                         <div className="col-12">
                             <label for="email" className="form-label">Email <span className="text-muted">(Opcional)</span></label>
-                            <input type="email" className="form-control" id="email" placeholder="you@example.com"/>
+                            <input type="email" className="form-control" name="email" value={formData.email} id="email"  onChange={handleChange}/>
 
                         </div>
 
                         <div className="col-12">
-                            <label for="address" className="form-label">Direccion</label>
-                            <input type="text" className="form-control" id="address" placeholder="1234 Main St" required=""/>
+                            <label for="telefono" className="form-label">telefono</label>
+                            <input type="text" className="form-control" id="telefono" name='telefono' value={formData.telefono} onChange={handleChange} required=""/>
 
                         </div>
 
-
-                        <div className="col-md-5">
-                            <label for="country" className="form-label">Ciudad</label>
-                            <select className="form-select" id="country" required="">
-                  <option value="">Seleccione...</option>
-                  <option>Buenos Aires</option>
-                </select>
-
-                        </div>
-
-                        <div className="col-md-4">
-                            <label for="state" className="form-label">Barrio</label>
-                            <select className="form-select" id="state" required="">
-                                <option value="">Seleccione...</option>
-                  <option value="">Buenos Aires</option>
-                  <option>Caba</option>
-                </select>
-
-                        </div>
-
-                        <div className="col-md-3">
-                            <label for="zip" className="form-label">Zip</label>
-                            <input type="text" className="form-control" id="zip" placeholder="" required=""/>
-                            <div className="invalid-feedback">
-                                Zip code required.
-                            </div>
-                        </div>
                     </div>
 
                     <div className="col-12 margintopcomentarios" >
-                        <label for="address" className="form-label">Comentarios</label>
-                        <textarea className="form-control" id="address" required=""></textarea>
+                        <label for="mensaje" className="form-label">Comentarios</label>
+                        <textarea className="form-control" id="mensaje" required="" name='mensaje'  value={formData.mensaje} onChange={handleChange}></textarea>
 
                     </div>
 
                     <hr className="my-4"/>
 
-                    <div className="form-check">
-                        <input type="checkbox" className="form-check-input" id="same-address"/>
-                        <label className="form-check-label" for="same-address">Desea Recibir Informacion de nuestro nuevos productos</label>
-                    </div>
-
-                    <div className="form-check">
-                        <input type="checkbox" className="form-check-input" id="save-info"/>
-                        <label className="form-check-label" for="save-info">Acepta que nos comuniquemos con ustes en un horario de 8:00 a 16:00</label>
-                    </div>
+                   
 
                     <button className="w-100 btn btn-primary btn-lg margintopenviar" type="submit">Enviar</button>
                 </form>
+                {sending ? <p> enviando...</p> : null}
+                {msg ? <p>{msg}</p> : null}
             </div>
         </div>
     </div>
 
       <Footer/>
     </>
-  );
+  )
 }
+
+export default Contact
+

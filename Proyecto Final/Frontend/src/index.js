@@ -4,7 +4,7 @@ import {BrowserRouter, Routes, Route, Navigate} from "react-router-dom";
 import Home from './pages/Home';
 import Service from './pages/services';
 import Processes from './pages/processes';
-import Contact from './pages/contact'; 
+import Contact from './pages/Contact'; 
 import Header from './component/Header';
 import NovedadesPage from './pages/NovedadesPage'
 
